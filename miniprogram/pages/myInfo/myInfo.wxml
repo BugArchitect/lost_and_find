@@ -1,0 +1,27 @@
+<view class="body">
+    <view class="info">
+        <view class="info-item">
+            <text>头像</text>
+            <image class="avatarUrl" src="{{avatarUrl}}"></image>
+        </view>
+        <view class="info-item">
+            <text>昵称</text>
+            <text class="nickName">{{nickName}}</text>
+        </view>
+        <view class="info-item">
+            <text>联系方式</text>
+            <view class="contact-right">
+                <view class="edit" wx:if="{{edit}}">
+                    <input class="edit-input" type="text" value="{{phone}}" bindinput="getPhone" bindblur="modifyPhone" placeholder="请输入电话号码" maxlength="11" type="number"/>
+                    <image wx:if="{{phone.length > 0}}" bindtap="deletePhone" class="close-icon" src="../../images/home.png"></image>
+                </view>
+                <view class="phone-display" wx:else>{{_phone}}</view>
+                <view class="edit-status">
+                    <image class="edit-icon" wx:if="{{!edit}}" bindtap="toEdit" src="../../images/home.png"></image>
+                    <text wx:else bindtap="toEdit">取消</text>
+                </view>
+            </view>
+        </view>
+        <button class="btn" wx:if="{{edit}}" bindtap="savePhone">保存</button>
+    </view>
+</view>

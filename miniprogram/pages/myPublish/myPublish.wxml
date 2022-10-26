@@ -1,0 +1,5 @@
+<view class="body">
+    <!-- <text>我的发布</text> -->
+    <Tab tabList="{{tabList}}" />
+    <ViewBox wx:for="{{list}}" wx:key="index" data="{{item}}" />
+</view>

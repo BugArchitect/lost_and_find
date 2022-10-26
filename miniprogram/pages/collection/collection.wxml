@@ -1,0 +1,9 @@
+<view class="body">
+    <view class="collection-box">
+        <Tab tabList="{{tabList}}" />
+        <ViewBox wx:for="{{list}}" wx:key="index" data="{{item}}" />
+    </view>
+    <!-- <view wx:if="{{!login}}">
+        <text>请先登录</text>
+    </view> -->
+</view>

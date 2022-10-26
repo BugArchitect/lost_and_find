@@ -1,0 +1,52 @@
+.find-item {
+    background-color: #fff;
+    display: flex;
+    width: 100%;
+    padding: 20rpx;
+    margin-bottom: 5rpx;
+    box-sizing: border-box;
+}
+
+.find-item image {
+    width: 250rpx;
+    height: 250rpx;
+    min-width: 250rpx;
+    border-radius: 20rpx;
+}
+
+.find-content {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10rpx;
+    width: 100%;
+}
+
+.find-content .name {
+    font-weight: bold;
+}
+
+.find-content .region {
+    margin-top: 35rpx;
+}
+
+.find-content .desc {
+    color: #666;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 400rpx;
+}
+
+.find-content .region,
+.find-date,
+.desc {
+    font-size: 26rpx;
+    margin-bottom: 5rpx;
+}
+
+.find-content .publish-date {
+    margin-top: 30rpx;
+    margin-left: auto;
+    color: #666;
+    font-size: 26rpx;
+}

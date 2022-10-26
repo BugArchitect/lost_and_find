@@ -1,0 +1,32 @@
+.swiper {
+    height: 45vh;
+}
+
+.swiper-img {
+    width: 100%;
+    height: 45vh;
+}
+
+.name {
+    background-color: #fff;
+    margin-top: 20rpx;
+    padding: 20rpx;
+    font-weight: bold;
+}
+
+.content-box {
+    margin-top: 20rpx;
+    padding: 20rpx;
+    background-color: #fff;
+    line-height: 100rpx;
+}
+
+.description {
+    line-height: 50rpx;
+    color: #c3c3c3;
+}
+
+.bottom-box {
+    display: flex;
+
+}

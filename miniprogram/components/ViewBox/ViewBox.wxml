@@ -1,0 +1,10 @@
+<view class="find-item">
+    <image src="{{data.image}}"></image>
+    <view class="find-content">
+        <text class="name">{{data.name}}</text>
+        <text class="region">{{data.region}}</text>
+        <text class="find-date">{{data.find_date}}</text>
+        <text class="desc">{{data.desc}}</text>
+        <text class="publish-date">{{data.publish_date}}</text>
+    </view>
+</view>

@@ -1,0 +1,26 @@
+<view class="body">
+    <!-- 轮播图 -->
+    <swiper class="swiper" indicator-dots="true" autoplay="false" interval="2000" duration="500">
+        <block wx:for="{{background}}" wx:key="*this">
+            <swiper-item>
+                <image class="swiper-img" src="{{item}}"></image>
+            </swiper-item>
+        </block>
+    </swiper>
+
+    <!-- 内容栏 -->
+    <view class="name">一张身份证</view>
+    <view class="content-box">
+        <view class="region">地点</view>
+        <view class="find-time">发现时间</view>
+        <view class="description">物品描述巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉</view>
+    </view>
+
+    <!-- 底部栏 -->
+    <view class="bottom-box">
+        <view class="comment-bar"></view>
+        <view class="collection">
+            <image class="collection-icon" src=""></image>
+        </view>
+    </view>
+</view>
