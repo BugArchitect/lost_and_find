@@ -7,7 +7,7 @@
     box-sizing: border-box;
 }
 
-.find-item image {
+.find-item .find-img {
     width: 250rpx;
     height: 250rpx;
     min-width: 250rpx;

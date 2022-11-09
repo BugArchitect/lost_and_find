@@ -3,7 +3,7 @@
     <!-- 未登录界面 -->
     <view class="unlogin-body" wx:if="{{!login}}">
         <view class="unlogin">
-            <image class="unlogin-img" src="../../images/mine.png"></image>
+            <image class="unlogin-img" src="../../images/me_login.png"></image>
             <button class="unlogin-btn" open-type="getUserInfo" bindtap="toLogin">微信一键登录</button>
         </view>
     </view>
@@ -26,10 +26,12 @@
                         <text class="cell-left-text">{{item.text}}</text>
                     </view>
                     <view class="cell-right">
-                        <text class="cell-right-text"> > </text>
+                        <image class="cell-right-img" src="../../images/right.png"></image>
                     </view>
                 </view>
             </view>
         </view>
+
     </view>
+    
 </view>

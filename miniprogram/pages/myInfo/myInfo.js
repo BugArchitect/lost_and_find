@@ -5,19 +5,22 @@ Page({
      * 页面的初始数据
      */
     data: {
-        avatarUrl: '',
-        nickName: '',
-        edit: false,
-        phone: '',
-        _phone: '' /*缓存*/
+        avatarUrl: '',      //头像
+        nickName: '',       //昵称
+        edit: false,        //编辑的状态
+        phone: '',      //即时
+        _phone: ''      //缓存
     },
 
+    // 改变编辑状态
     toEdit() {
         this.setData({
             edit: !this.data.edit,
             phone:this.data._phone
         })
     },
+
+    // 向联系方式赋值
     getPhone(e) {
         const {
             value
@@ -26,11 +29,15 @@ Page({
             phone: value
         })
     },
+
+    // 清空联系方式的输入
     deletePhone() {
         this.setData({
             phone: ''
         })
     },
+
+    // 保存输入的联系方式并存入缓存
     savePhone() {
         let userInfo = wx.getStorageSync('userInfo')
         userInfo = {
@@ -43,9 +50,12 @@ Page({
             _phone:this.data.phone
         })
     },
+
+    // 联系方式的规范化输入
     modifyPhone(){
         
     },
+    
     /**
      * 生命周期函数--监听页面加载
      */

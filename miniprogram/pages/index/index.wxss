@@ -1,20 +1,23 @@
+.body {
+    padding-bottom: 200rpx;
+}
+
 .swiper {
-    height: 350rpx;
+    height: 300rpx;
 }
 
 .swiper-img {
     width: 100%;
-    height: 350rpx;
+    height: 300rpx;
+    padding: 5rpx 0rpx;
+}
+
+.divideline {
+    border-bottom: 5rpx solid #fff;
+    margin-bottom: 5rpx;
 }
 
 .find {
     display: flex;
     flex-direction: column;
 }
-
-.find .nothing{
-    width: 100%;
-    height: 160.8rpx;
-    background-color: #fff;
-}
-

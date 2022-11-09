@@ -18,6 +18,8 @@ Component({
      * 组件的方法列表
      */
     methods: {
+
+        // tab选择
         selectTab(e) {
             // console.log(e)
             const {
@@ -26,6 +28,7 @@ Component({
             this.setData({
                 select: id,
             })
+            this.triggerEvent('gettab',id)
         },
     }
 })

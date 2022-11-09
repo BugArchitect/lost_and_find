@@ -5,30 +5,33 @@ Page({
      * 页面的初始数据
      */
     data: {
-        login: false,
-        avatarUrl: '',
-        nickName: '',
+        // login: false,       //登录状态
+        avatarUrl: '',      //头像
+        nickName: '',       //昵称
+        // 页面跳转选择
         cellList: [{
-                url: '../../images/home.png',
+                url: '../../images/myPublish.png',
                 text: '我的发布',
                 page: '../myPublish/myPublish'
             },
             {
-                url: '../../images/home.png',
+                url: '../../images/_collection.png',
                 text: '我的收藏',
                 page: '../myCollection/myCollection'
             },
             {
-                url: '../../images/home.png',
+                url: '../../images/myInformation.png',
                 text: '我的信息',
                 page: '../myInfo/myInfo'
             },
             {
-                url: '../../images/home.png',
+                url: '../../images/logout.png',
                 text: '退出登录'
             }
         ]
     },
+
+    // 实现页面跳转
     toDetail(e) {
         const {
             page
@@ -46,17 +49,20 @@ Page({
                     const {
                         confirm
                     } = res
-                    if(confirm){
+                    // 清空缓存中的登录状态和个人信息
+                    if (confirm) {
                         wx.removeStorageSync('login')
                         wx.removeStorageSync('userInfo')
                         this.setData({
-                            login:false
+                            login: false
                         })
                     }
                 }
             })
         }
     },
+
+    // 实现登录
     toLogin() {
         wx.getUserProfile({
             desc: '获取用户信息',
@@ -82,6 +88,7 @@ Page({
             }
         })
     },
+    
     /**
      * 生命周期函数--监听页面加载
      */

@@ -1,5 +1,4 @@
 <view class="body">
-    <!-- <text>我的发布</text> -->
-    <Tab tabList="{{tabList}}" />
-    <ViewBox wx:for="{{list}}" wx:key="index" data="{{item}}" />
+    <Tab tabList="{{tabList}}" bindgettab="getTab" />
+    <ViewBox wx:for="{{list}}" wx:key="index" data="{{item}}" bindtap="toDetail" data-item="{{item}}" />
 </view>

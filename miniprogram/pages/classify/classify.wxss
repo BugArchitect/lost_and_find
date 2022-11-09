@@ -1,5 +1,5 @@
 .search {
-    background-color: #ff70b4 !important;
+    background-color: #ff70b0 !important;
 }
 
 .classify-box {
@@ -14,13 +14,14 @@
 
 .left-item {
     background-color: #f3f3f3;
-    padding: 40rpx 20rpx;
+    padding: 35rpx 20rpx;
     text-align: center;
     font-size: 26rpx;
     position: relative;
 }
 
-.left-item text {
+.left-item .find-itemtext {
+    font-size: 26rpx;
     white-space: nowrap;
 }
 
@@ -28,7 +29,7 @@
     position: absolute;
     left: 0;
     width: 0;
-    height: 50%;
+    height: 90%;
     border: 1rpx solid #ff70b4;
     top: 50%;
     transform: translateY(-50%);
@@ -55,11 +56,11 @@
     padding: 30rpx 0;
 }
 
-.right-item image {
+.right-item .find-img {
     width: 100rpx;
     height: 100rpx;
 }
 
-.right-item text {
-    font-size: 26rpx;
+.right-item .find-text {
+    font-size: 24rpx;
 }

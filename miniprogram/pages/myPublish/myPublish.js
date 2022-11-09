@@ -1,4 +1,11 @@
 // pages/myPublish/myPublish.js
+
+import {
+    formatTime
+} from '../../utils/index' //导入时间格式化函数
+
+const db = wx.cloud.database()
+
 Page({
 
     /**
@@ -6,21 +13,64 @@ Page({
      */
     data: {
         tabList: ['寻主', '寻物'],
-        list: [{
-            image: '../../images/demo1.jpg',
-            name: '身份证',
-            region: '地点',
-            find_date: '发现时间',
-            desc: '物体描述巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉',
-            publish_date: '发布时间'
-        }]
+        list: [],
+        select: 0
     },
+
+    getTab(e) {
+        // console.log(e)
+        const select = e.detail;
+        this.setData({
+            select
+        })
+        this.onLoad();
+    },
+
+    // 进入物品的详情页面
+    toDetail(e) {
+        let {
+            item
+        } = e.currentTarget.dataset;
+        // const id = item.id;
+        // delete item['_id'];
+        // item._id = id;
+        // console.log(item)
+        wx.navigateTo({
+            // 通过路径将数据传入
+            url: `../detailPage/detailPage?info=${JSON.stringify(item)}`,
+            // url:`../detailPage/detailPage?id=${item._id}`
+        })
+    },
+
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad(options) {
-
+        const {
+            select
+        } = this.data;
+        // 查表，对tab进行动态切换
+        const openid = wx.getStorageSync('openid')
+        db.collection('publish').where({
+            type: String(select),
+            _openid: openid
+        }).get({
+            success: (res) => {
+                // console.log(res);
+                const {
+                    data
+                } = res;
+                this.setData({
+                    list: data.map(item => {
+                        return {
+                            ...item,
+                            time: formatTime(item.time)
+                        }
+                    })
+                })
+            }
+        })
     },
 
     /**

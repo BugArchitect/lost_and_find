@@ -25,12 +25,12 @@
     align-items: center;
 }
 
-.search-content image {
-    width: 40rpx;
-    height: 40rpx;
+.search-content .search-icon {
+    width: 35rpx;
+    height: 35rpx;
 }
 
-.search-content text {
+.search-content .search-text {
     margin-left: 10rpx;
-    font-size: 32rpx;
+    font-size: 26rpx;
 }

@@ -1,19 +1,27 @@
 <view class="body">
-    <SearchBox />
+
+    <SearchBox bindtap="toSearch"/>
+
     <view class="classify-box">
+
+        <!-- 侧边分类栏 -->
         <view class="classify-left">
             <view class="left-item {{select === index ? 'classify-select':''}}" wx:for="{{asideBars}}" wx:key="index" data-index="{{index}}" bindtap="selectBar">
-                <text>{{item}}</text>
+                <text class="find-itemtext">{{item}}</text>
                 <block wx:if="{{select === index}}">
                     <view class="classify-line"></view>
                 </block>
             </view>
         </view>
+
+        <!-- 右侧物品栏 -->
         <view class="classify-right">
             <view class="right-item" wx:for="{{[1,1,1,1,1,1,1,1,1]}}" wx:key="index">
-                <image src="../../images/demo2.jpg"></image>
-                <text>和泉纱雾</text>
+                <image class="find-img" src="../../images/demo2.jpg"></image>
+                <text class="find-text">和泉纱雾</text>
             </view>
         </view>
+
     </view>
+
 </view>

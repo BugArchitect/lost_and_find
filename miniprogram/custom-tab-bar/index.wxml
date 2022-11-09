@@ -1,15 +1,21 @@
 <view class="tabbar">
+
     <view class="tabbar-item {{select === index ? 'tabbar-select' : ''}}" wx:for="{{list}}" wx:key="index" data-page="{{item.pagePath}}" data-index="{{item.index}}" data-type="{{item.type}}" bindtap="selectPage">
+        
+        <!-- 下方选择栏 -->
         <block wx:if="{{item.type === 0}}">
-            <image src="{{select === index ? item.selectedIconPath:item.iconPath}}"></image>
-            <text>{{item.text}}</text>
+            <image class="tabbar-icon" src="{{select === index ? item.selectedIconPath:item.iconPath}}"></image>
+            <text class="tabbar-text">{{item.text}}</text>
         </block>
+
+        <!-- 中间发布按钮 -->
         <block wx:else>
             <view class="tabbar-item">
-                <view class="publish">
-                    <text> + </text>
+                 <view class="publish">
+                    <image class="publish-icon" src="../images/add.png"></image>
                 </view>
             </view>
         </block>
+        
     </view>
 </view>

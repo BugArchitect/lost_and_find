@@ -1,7 +1,7 @@
 <view class="body">
     <!-- 轮播图 -->
     <swiper class="swiper" indicator-dots="true" autoplay="false" interval="2000" duration="500">
-        <block wx:for="{{background}}" wx:key="*this">
+        <block wx:for="{{info.imgList}}" wx:key="index">
             <swiper-item>
                 <image class="swiper-img" src="{{item}}"></image>
             </swiper-item>
@@ -9,18 +9,31 @@
     </swiper>
 
     <!-- 内容栏 -->
-    <view class="name">一张身份证</view>
+    <view class="name">{{info.name}}</view>
     <view class="content-box">
-        <view class="region">地点</view>
-        <view class="find-time">发现时间</view>
-        <view class="description">物品描述巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉</view>
+        <view class="time item">
+            <text class="title">发现时间</text>
+            <text>{{info.date}}</text>
+        </view>
+        <view class="region item">
+            <text class="title">发现地点</text>
+            <text>{{info.region}}</text>
+        </view>
+        <view class="desc item">
+            <text class="title">物品描述</text>
+            <text>{{info.desc}}</text>
+        </view>
     </view>
 
     <!-- 底部栏 -->
     <view class="bottom-box">
-        <view class="comment-bar"></view>
-        <view class="collection">
-            <image class="collection-icon" src=""></image>
+        <view class="bottom-left" bindtap="toContact">
+            <image class="comment-icon" src="../../images/comment.png"></image>
+            <text class="bottom-text">点击联系我</text>
+        </view>
+        <view class="bottom-right" bindtap="toCollect">
+            <image class="collect-icon" src="{{collectionIcon[0]}}"></image>
+            <text class="bottom-text">收藏</text>
         </view>
     </view>
 </view>

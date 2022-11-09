@@ -1,0 +1,64 @@
+<view class="body">
+    <view class="container">
+
+        <!-- 寻找类型选择 -->
+        <view class="type">
+            <view class="type-item {{type === '0' ? 'type-select' : ''}}" bindtap="selectType" data-id="0">寻主</view>
+            <view class="type-item {{type === '1' ? 'type-select' : ''}}" bindtap="selectType" data-id="1">寻物</view>
+        </view>
+
+        <!-- 物品类型选择 -->
+        <view class="classify">
+            <text class="label">物品类型：</text>
+            <picker class="picker" mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+                <view class="picker-item">
+                    <view class="select" wx:if="{{select}}">
+                        <text>{{multiArray[0][multiIndex[0]]}} / {{multiArray[1][multiIndex[1]]}}</text>
+                        <image catchtap="clearSelect" class="delete-icon" src="../../images/close.png"></image>
+                    </view>
+                    <view class="empty" wx:else>
+                        <text>请选择</text>
+                        <image class="select-icon" src="../../images/down.png"></image>
+                    </view>
+                </view>
+            </picker>
+        </view>
+
+        <!-- 内容输入框 -->
+        <view class="input-list">
+            <input class="input-item" value="{{name}}" bindinput="getName" placeholder="请输入物品名称" type="text" />
+            <input class="input-item" value="{{date}}" bindinput="getDate" placeholder="请输入丢失/拾取时间" type="text" />
+            <input class="input-item" value="{{region}}" bindinput="getRegion" placeholder="请输入丢失/拾取地点" type="text" />
+            <input class="input-item" value="{{contact}}" bindinput="getContact" placeholder="如何联系您？如：qq:xxx...,wx:xxx..." type="text" />
+        </view>
+
+        <!-- 物品描述 -->
+        <view class="desc">
+            <textarea value="{{desc}}" placeholder="请输入物品描述" id="" cols="25" rows="10" style="font-size: 26rpx;" bindinput="getDesc"></textarea>
+            <image wx:if="{{desc.length > 0}}" class="delete-icon" src="../../images/close.png" bindtap="clearDesc"></image>
+        </view>
+
+        <!-- 上传图片 -->
+        <view class="upload">
+            <view class="upload-top">
+                <text class="upload-title">最多选择6张图片</text>
+                <text style="color: #aaa;font-size: 28rpx;">{{imgList.length}}/6</text>
+            </view>
+            <view class="upload-list">
+                <view class="image-list" wx:for="{{imgList}}" wx:key="index">
+                    <image class="common" src="{{item}}"></image>
+                    <image class="delete-icon" src="../../images/close.png" bindtap="deleteImg" data-index="{{index}}"></image>
+                </view>
+                <image class="default" src="../../images/addImg.png" bindtap="uploadImage" wx:if="{{imgList.length < 6}}"></image>
+            </view>
+        </view>
+
+        <!-- 底部栏 -->
+        <view class="bottom">
+            <button class="publish-btn" bindtap="toPublish">发布</button>
+        </view>
+    </view>
+
+
+
+</view>

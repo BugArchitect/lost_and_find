@@ -1,0 +1,35 @@
+<view class="body">
+    <!-- 搜索框 -->
+    <view class="search-box">
+        <image class="search-icon" src="../../images/search.png"></image>
+        <input class="search-text" value="{{_search_input}}" placeholder="搜索" bindinput="getSearch" type="text" />
+        <image class="close-icon" src="../../images/close.png" wx:if="{{_search_input.length > 0}}" bindtap="deleteSearch"></image>
+    </view>
+
+    <!-- 搜索历史 -->
+    <view class="empty-search" wx:if="{{search_input.length === 0}}">
+        <view class="search-history">
+            <text class="history-text">搜索历史</text>
+            <image class="delete-icon" src="../../images/delete.png" bindtap="deleteSearchLog"></image>
+        </view>
+        <view class="search-history-list">
+            <view class="search-history-item" wx:for="{{searchLog}}" wx:key="index">{{item}}</view>
+        </view>
+    </view>
+
+    <!-- 搜索结果 -->
+    <view class="result-search" wx:else>
+        <view class="search-item">
+            <text>身份证</text>
+            <image class="arrow-icon" src="../../images/right.png"></image>
+        </view>
+        <!-- <view class="search-item">
+            <text>身份证</text>
+            <image class="arrow-icon" src="../../images/right.png"></image>
+        </view>
+        <view class="search-item">
+            <text>身份证</text>
+            <image class="arrow-icon" src="../../images/right.png"></image>
+        </view> -->
+    </view>
+</view>

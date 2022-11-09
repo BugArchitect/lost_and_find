@@ -1,23 +1,24 @@
 <view class="body">
 
     <!-- 搜索框模块 -->
-    <SearchBox />
+    <SearchBox bindtap="toSearch" />
 
     <!-- 轮播图模块 -->
     <swiper class="swiper" indicator-dots="true" autoplay="false" interval="2000" duration="500">
-        <block wx:for="{{background}}" wx:key="*this">
+        <block wx:for="{{background}}" wx:key="index">
             <swiper-item>
                 <image class="swiper-img" src="{{item}}"></image>
             </swiper-item>
         </block>
     </swiper>
 
+    <view class="divideline"></view>
+
     <!-- 导航栏模块 -->
-    <Tab tabList="{{tabList}}" />
+    <Tab tabList="{{tabList}}" bindgettab="getTab" />
 
     <!-- 下方内容区域 -->
     <view class="find">
-        <ViewBox wx:for="{{list}}" wx:key="index" data="{{item}}" bindtap="toDetail" />
-        <view class="nothing"></view>
+        <ViewBox wx:for="{{list}}" wx:key="index" data="{{item}}" bindtap="toDetail" data-item="{{item}}" />
     </view>
 </view>

@@ -8,12 +8,22 @@ Page({
         asideBars:["证件","食品","书籍","生活用品","电子产品","文具"],
         select:0
     },
+
+    // 侧边栏的选择
     selectBar(e){
         const {index} = e.currentTarget.dataset
         this.setData({
             select:index
         })
     },
+
+    // 跳转到搜索页面
+    toSearch(){
+        wx.navigateTo({
+          url: '../search/search',
+        })
+    },
+
     /**
      * 生命周期函数--监听页面加载
      */

@@ -1,9 +1,12 @@
 <view class="body">
-    <view class="collection-box">
-        <Tab tabList="{{tabList}}" />
-        <ViewBox wx:for="{{list}}" wx:key="index" data="{{item}}" />
+
+    <view wx:if="{{!login}}">
+        <text>请先登录后查看</text>
     </view>
-    <!-- <view wx:if="{{!login}}">
-        <text>请先登录</text>
-    </view> -->
+
+    <view class="collection-box" wx:else>
+        <Tab tabList="{{tabList}}" bindgettab="getTab" />
+        <ViewBox wx:for="{{list}}" wx:key="index" data="{{item}}" bindtap="toDetail" data-item="{{item}}" />
+    </view>
+
 </view>

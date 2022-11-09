@@ -33,12 +33,14 @@
 }
 
 .contact-right .phone-display{
-    margin-right: 30rpx;
+    margin-right: 40rpx;
+    font-size: 28rpx;
 }
 .contact-right .edit-input {
     border: 2rpx solid #f3f3f3;
-    padding: 5px 5rpx;
-    margin-right: 20rpx;
+    padding: 5px 10rpx;
+    /* margin-right: 20rpx; */
+    font-size: 26rpx;
 }
 
 .contact-right .edit {
@@ -48,9 +50,9 @@
 
 .contact-right .edit .close-icon {
     position: absolute;
-    width: 30rpx;
-    height: 30rpx;
-    right: 40rpx;
+    width: 25rpx;
+    height: 25rpx;
+    right: 55rpx;
     top: 50%;
     transform: translateY(-50%);
     z-index: 10;

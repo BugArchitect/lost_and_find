@@ -5,7 +5,7 @@
     position: fixed;
     bottom: 0;
     padding-bottom: env(safe-area-inset-bottom);
-    padding-top: 10rpx;
+    padding-top: 20rpx;
     z-index: 9999;
 }
 
@@ -17,28 +17,28 @@
     align-items: center;
 }
 
-.tabbar-item image{
+.tabbar-item .tabbar-icon{
     width: 50rpx;
     height: 50rpx;
 }
 
-.tabbar-item text{
+.tabbar-item .tabbar-text{
     font-size: 26rpx;
     margin-top: 5rpx;
 }
 
 .tabbar-item .publish{
-    background-color: #ff90b4;
-    border-radius: 50%;
+    /* background-color: #ff70b4; */
+    /* border-radius: 50%; */
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: auto;
+    margin-bottom: 10rpx;
 }
 
-.tabbar-item .publish text{
-    font-size: 65rpx;
-    color: #fff;
+.tabbar-item .publish .publish-icon{
+    width: 100rpx;
+    height: 100rpx;
 }
 
 .tabbar-select{
